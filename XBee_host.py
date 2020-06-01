@@ -37,6 +37,7 @@ def sendRPC():
             time.sleep(1)
     
     timestamp = np.linspace(1,20,20)
+    plt.figure(1)
     plt.plot(timestamp,data[0:20])
     plt.xlabel("timestamp")
     plt.ylabel("number")
@@ -68,7 +69,7 @@ def accHandle():
         mqttc.publish(topic4, linet)
         tilt.append(float(linet))
     
-    print(len(tilt))
+    #print(len(tilt))
 
 mqttc = paho.Client()
 

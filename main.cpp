@@ -100,7 +100,7 @@ int main(){
   xbee.getc();
 
   // start
-  pc.printf("start\r\n");
+  //pc.printf("start\r\n");
   t1.start(callback(&queue, &EventQueue::dispatch_forever));
   t2.start(getAcc);
 
@@ -138,7 +138,7 @@ void reply_messange(char *xbee_reply, char *messange){
   xbee_reply[1] = xbee.getc();
   xbee_reply[2] = xbee.getc();
   if(xbee_reply[1] == 'O' && xbee_reply[2] == 'K'){
-    pc.printf("%s\r\n", messange);
+    //pc.printf("%s\r\n", messange);
     xbee_reply[0] = '\0';
     xbee_reply[1] = '\0';
     xbee_reply[2] = '\0';
@@ -150,7 +150,7 @@ void check_addr(char *xbee_reply, char *messenger){
   xbee_reply[1] = xbee.getc();
   xbee_reply[2] = xbee.getc();
   xbee_reply[3] = xbee.getc();
-  pc.printf("%s = %c%c%c\r\n", messenger, xbee_reply[1], xbee_reply[2], xbee_reply[3]);
+  //pc.printf("%s = %c%c%c\r\n", messenger, xbee_reply[1], xbee_reply[2], xbee_reply[3]);
   xbee_reply[0] = '\0';
   xbee_reply[1] = '\0';
   xbee_reply[2] = '\0';
